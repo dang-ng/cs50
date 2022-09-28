@@ -1,0 +1,22 @@
+{% extends 'template.html' %}
+
+{% block title %}URL for {{ketqua}} {% endblock %}
+
+{% block main %}
+
+<div class="container text-center">
+    <h1 class="jumbotron-heading">New short URL {{ketqua}} created from your URL</h1>
+    <input class="lead" id="new_url" value="{{url_for('return_url', ma=ketqua)}}" readonly>
+    <p><button onclick=copy_url() class="btn btn-danger my-2">Copy URL</button></p>
+</div>
+
+<script>
+    function copy_url()
+    {
+        var saochep = document.getElementById('new_url');
+        saochep.select();
+        document.execCommand('copy');
+
+    }
+</script>
+{% endblock %}

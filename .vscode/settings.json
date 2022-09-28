@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "cs50.h": "c",
+        "string_view": "c",
+        "typeinfo": "c",
+        "random": "c",
+        "*.tcc": "c",
+        "string": "c",
+        "cstdio": "c"
+    }
+}

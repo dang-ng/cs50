@@ -1,0 +1,58 @@
+{% extends 'template.html' %}
+
+{% block title %}URL shortener{% endblock %}
+
+{% block main %}
+
+<div class="container">
+<div class="card-deck mb-3">
+<div class="card mb-4 shadow-sm">
+<div class="card-header">
+    <h1 class="mv-0 font-weight-normal text-center">Website URL</h1>
+</div>
+<div class="card-body">
+    <form action="url-cua-toi" method="post">
+        <label for="url-vao">URL</label>
+        <input class="form-control" type="url" name="url-vao" value="" required>
+        <br>
+        <label for="url-ra">Short Name</label>
+        <input class="form-control type="text" name="url-ra" value="" required>
+        <br>
+        <input class="btn btn-danger btn-lg btn-block" type="submit" value="Shorten">
+    </form>
+</div>
+</div>
+
+<div class="card mb-4 shadow-sm">
+<div class="card-header">
+    <h1 class="mv-0 font-weight-normal text-center">File Upload</h1>
+</div>
+<div class="card-body">
+    <form action="url-cua-toi" method="post" enctype="multipart/form-data">
+        <label for="file">File</label>
+        <input class="form-control" id="file" type="file" name="file" value="" required>
+        <br>
+        <label for="url-ra">Short Name</label>
+        <input class="form-control type="text" name="url-ra" value="" required>
+        <br>
+        <input class="btn btn-danger btn-lg btn-block" type="submit" value="Shorten">
+    </form>
+</div>
+</div>
+</div>
+
+    {% if cookies %}
+    <p class="mv-0 font-weight-normal">URLs saved:</p>
+    <ul class="list-group">
+        {% for cookie in cookies %}
+        <a href="{{url_for('return_url', ma = cookie)}}">
+        <li class="list-group-item text-danger">{{cookie}}</li>
+        </a>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    
+</div>
+{% endblock %}
+

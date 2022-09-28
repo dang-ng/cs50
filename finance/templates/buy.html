@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form method="POST">
+        <input name="symbol" placeholder="symbol" type="text">
+        <input name="shares" placeholder="shares" type="number">
+        <button type="submit">BUY</button>
+    </form>
+{% endblock %}

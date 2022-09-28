@@ -1,0 +1,338 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+/*
+1. vị trí
+2. kích thước
+3. màu sắc
+4. kiểu dáng
+ */
+
+/* common */
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.one-col {
+    width: 100%;
+}
+
+.three-col {
+    width: 33.33333%;
+}
+
+.two-col {
+    width: 50%;
+}
+
+/* main */
+.text-white {
+    color: #fff !important;
+}
+
+#main {
+
+}
+
+#header {
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav li {
+    display: inline-block;
+    position: relative;
+}
+
+.button>a {
+    text-transform: uppercase;
+}
+
+#nav .subnav {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    /* color: #000 !important; */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#nav .subnav a {
+    color: #000;
+    display: block;
+    min-width: 160px;
+    line-height: 38px;
+}
+
+#nav li a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: inline-block;
+}
+
+#nav li:hover>a {
+    /* display: inline-block; */
+    color:#000;
+    background-color: #ccc;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+div.search {
+    float: right;
+    color: #fff;
+    cursor: pointer;
+}
+
+i.ti-search {
+    display: inline-block;
+    min-width: 46px;
+    text-align: center;
+    line-height: 46px;
+}
+
+.search:hover {
+    background-color:crimson;
+}
+
+.tour-section {
+    background-color: #000;
+}
+
+.place-list {
+    overflow: hidden;
+    margin-top: 32px;
+}
+
+.place-img {
+    width: 100%;
+    display: block;
+}
+.place-img:hover {
+    opacity: 0.6;
+}
+.place-text {
+    background-color: #fff;
+    text-align: left;
+    padding: 16px;
+    font-size: 15px;
+}
+.place-heading {
+    font-size: 15px;
+    font-weight: 600;
+}
+.place-time {
+    margin-top: 15px;
+    color: #757575;
+}
+.place-desc {
+    margin-top: 15px;
+}
+.buy-btn {
+    color: #fff;
+    text-decoration: none;
+    background-color: #000;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+ }
+ .buy-btn:hover {
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+ }
+
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 40px;
+    display: inline-block;
+}
+
+.contact-info ul {
+    list-style-type: none;
+}
+
+.contact-form{
+ font-size: 15px;
+}
+
+input.form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    outline: blue;
+}
+
+.contact-form>form>input {
+    margin-top: 16px;
+    background-color: #000;
+    color: #fff;
+    align-content: right;
+    font-size: 15px;
+    border: 1px solid #000;
+    padding: 10px 16px;
+    float: right;
+
+}
+.contact-form>form>input:hover {
+    cursor: pointer;
+    color: #000;
+    background-color: #ccc;
+}
+
+
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list {
+    font-size: 24px;
+}
+
+#footer .social-list a {
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+}
+#footer .social-list a:hover, #footer .return a:hover {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+#footer .return {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .return a {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+    display: none;
+    animation: modalFadeIn ease .3s;
+}
+.modal.open{
+    display: flex;
+}
+.modal-container {
+    background: #fff;
+    width: 800px;
+    min-height: 200px;
+    position: relative;
+    max-width: calc(100%-32px);
+}
+
+.modal-header {
+    height: 130px;
+    background-color: coral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+}
+
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    opacity: 0.9;
+}
+.modal-close:hover {
+    opacity: 0.5;
+}
+
+.modal-body {
+    padding: 16px;
+}
+.modal-input {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.modal-label {
+    margin-bottom: 12px;
+}
+#modal-buy:hover {
+    cursor: pointer;
+    background: cadetblue;
+}
+
+#modal-buy {
+    background: coral;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 18px;
+}
+
+.modal-footer {
+    padding: 16px;
+    text-align: right;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

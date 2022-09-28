@@ -1,0 +1,19 @@
+sort1 uses: bubble sort
+
+How do you know?: bubble sort do a quite good job when in best case scenarios (already sorted)
+
+sort2 uses: merge sort
+
+How do you know?: merge sort should be quickest method in random scenarios
+
+sort3 uses: selection sort
+
+How do you know?: the remaining method should be selection sort
+
+sort1 random50000.txt 7.319s
+sort2 random50000.txt 0.417s --> merge sort should be quickest method in random scenarios
+sort3 random50000.txt 3.118s
+
+sort1 sorted50000.txt 0.493s --> bubble sort do a quite good job when in best case scenarios (already sorted)
+sort2 sorted50000.txt 0.570s
+sort3 sorted50000.txt 3.043s --> the remaining method should be selection sort
